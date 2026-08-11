@@ -16,29 +16,8 @@ function isVariableDefined(el) {
   return typeof el !== 'undefined' && el !== null;
 }
 
-// ============ BANNER CAROUSEL (nova-conecta) ============
-const images = [
-  "assets/images/banner/1.jpg",
-  "assets/images/banner/2.jpg",
-  "assets/images/banner/3.jpg",
-  "assets/images/banner/4.jpg"
-];
-
-let current = 0;
-const home = document.getElementById("home");
-const overlay = home ? home.querySelector('.fade-overlay') : null;
-
-if (home) {
-  setInterval(() => {
-    home.classList.add('fadeing');
-    setTimeout(() => {
-      current = (current + 1) % images.length;
-      home.style.backgroundImage = `url(${images[current]})`;
-      home.setAttribute('data-jarallax-original-styles', `url(${images[current]})`);
-      home.classList.remove('fadeing');
-    }, 1000);
-  }, 8000);
-}
+// ============ BANNER HERO (vídeo do YouTube) ============
+// O hero agora usa um vídeo de fundo (YouTube embed) em vez do carrossel de imagens.
 
 // ============ SCROLL NAVBAR ============
 window.addEventListener("scroll", function () {
