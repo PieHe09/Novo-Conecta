@@ -135,8 +135,8 @@ function tinySlider() {
     var sliderAutoPlay = slider1.getAttribute('data-autoplay') !== 'false';
     var sliderAutoPlayTime = slider1.getAttribute('data-autoplaytime') ? slider1.getAttribute('data-autoplaytime') : 4000;
     var sliderHoverPause = slider1.getAttribute('data-hoverpause') === 'true';
-    var sliderLoop = slider1.getAttribute('data-loop') !== 'false';
-    var sliderRewind = slider1.getAttribute('data-rewind') === 'true';
+    var sliderLoop = true;
+    var sliderRewind = false;
     var sliderAutoHeight = slider1.getAttribute('data-autoheight') === 'true';
     var sliderfixedWidth = slider1.getAttribute('data-fixedwidth') === 'true';
     var sliderTouch = slider1.getAttribute('data-touch') !== 'false';
