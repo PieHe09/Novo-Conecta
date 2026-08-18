@@ -15,23 +15,20 @@
      · P  = imprimir / exportar em PDF (slides limpos, sem notas)
      · Clique nos pontos de progresso para ir direto a um slide
 
-     ESTRUTURA (9 slides):
-     · 1  Abertura                   · 6  Telas do novo site
-     · 2  Equipe e processo          · 7  Comparativo
-     · 3  Contexto e objetivo        · 8  Demonstração
-     · 4  Primeira versão do site    · 9  Resultado e encerramento
-     · 5  Principais melhorias
+     ESTRUTURA (6 slides):
+     · 1  Abertura                   · 4  Primeira versão do site
+     · 2  Equipe e processo          · 5  Demonstração
+     · 3  Contexto e objetivo        · 6  Resultado e encerramento
 
      COMO EDITAR:
      · Cada <section class="slide"> é um slide; o data-note="N" se
        conecta às notas do apresentador (data-notes-for="N").
-     · Telas dos slides 4 e 5: A.Images/ (novo) e assets/images/
-       (versão antiga). Comparativo/demonstração: Desktop.site.png
-       e Mobile.site.png.
+     · Telas do slide 4: assets/images/ (versão antiga).
+       Demonstração: Desktop.site.png e Mobile.site.png.
      · O nome da seção de cada card fica no rótulo .s-antiga-label,
-       na base das imagens dos slides 4 e 5.
+       na base das imagens do slide 4.
      · Nomes dos integrantes: slide 1 (badge), slide 2 (cards da
-       equipe) e slide 9 (rodapé do encerramento).
+       equipe) e slide 6 (rodapé do encerramento).
      ============================================================= -->
 
 <!-- ==================== FONTES ==================== -->
@@ -204,16 +201,13 @@ p.body{font-size:15px;line-height:1.75;color:var(--bc-muted)}
 .s2-frame .shot img{width:100%;height:auto;display:block;border-radius:8px}
 
 /* ==================== SLIDE 4 — PRIMEIRA VERSÃO (claro) ==================== */
-.s-antiga .pad,.s-novo .pad{padding-top:30px;padding-bottom:24px}
+.s-antiga .pad{padding-top:30px;padding-bottom:24px}
 .slide h1.s-antiga-title{font-size:36px;max-width:800px;margin-top:8px}
 .s-antiga-grid{flex:1;display:grid;grid-template-columns:repeat(2,440px);gap:14px;align-content:center;justify-content:center}
 .s-antiga-cell .s2-frame{border:2px solid rgba(15,122,86,.48);border-radius:20px;box-shadow:0 16px 34px rgba(7,64,46,.14)}
 .s-antiga-cell .shot{border-bottom:0;padding:8px;background:linear-gradient(135deg,#fff,#edf8f1)}
-.s-novo .s-antiga-cell .s2-frame{border:2px solid rgba(195,227,78,.65);border-radius:20px;box-shadow:0 16px 34px rgba(143,182,44,.2)}
-.s-novo .s-antiga-cell .shot{border-bottom:0;padding:8px;background:linear-gradient(135deg,#fff,#f6fbe9)}
 .s-antiga-cell .s2-frame{transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
 .s-antiga-cell:hover .s2-frame{transform:translateY(-8px) scale(1.02);box-shadow:0 26px 50px rgba(7,64,46,.22);border-color:rgba(15,122,86,.85)}
-.s-novo .s-antiga-cell:hover .s2-frame{box-shadow:0 26px 50px rgba(143,182,44,.3);border-color:rgba(195,227,78,1)}
 .s-antiga-cell .shot{position:relative}
 .s-antiga-label{
   position:absolute;left:0;right:0;bottom:0;
@@ -224,44 +218,41 @@ p.body{font-size:15px;line-height:1.75;color:var(--bc-muted)}
   background:linear-gradient(180deg,rgba(6,48,36,0) 0%,rgba(6,48,36,.82) 55%);
   border-radius:0 0 12px 12px;
 }
-.s-novo .s-antiga-label{background:linear-gradient(180deg,rgba(6,48,36,0) 0%,rgba(10,61,41,.9) 55%)}
-
-/* ==================== SLIDE 6 — PRINCIPAIS MELHORIAS (claro) ==================== */
-.s3-title{max-width:880px;margin-top:16px}
-.pillars{flex:1;display:flex;align-items:stretch;justify-content:center;gap:22px;padding-top:18px}
-.pillar{flex:1;max-width:400px;border-radius:24px;padding:26px 26px 30px;display:flex;flex-direction:column;align-items:flex-start;gap:12px;
-  background:rgba(255,255,255,.86);border:1px solid var(--bc-border);box-shadow:var(--bc-shadow);
-  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:transform .3s ease,box-shadow .3s ease}
-.pillar:hover{transform:translateY(-6px);box-shadow:var(--bc-shadow-strong)}
-.pillar .ic{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;background:#fff;border:2px solid var(--bc-primary);box-shadow:0 6px 18px rgba(59,189,128,.16)}
-.pillar .ic svg{width:28px;height:28px;stroke:var(--bc-primary-dark);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.pillar.b2 .ic{border-color:var(--bc-primary-dark)} .pillar.b2 .ic svg{stroke:var(--bc-primary-deep)}
-.pillar.b3 .ic{border-color:var(--lime-deep)} .pillar.b3 .ic svg{stroke:var(--bc-primary-deep)}
-.pillar h3{font-size:20px;font-weight:700;line-height:1.2}
-.pillar .k{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--bc-muted);text-transform:uppercase}
-.pillar .tick{display:inline-flex;align-items:flex-start;gap:9px;font-size:12.5px;font-weight:700;line-height:1.5;color:var(--bc-primary-dark)}
-.pillar .tick::before{content:"";width:7px;height:7px;border-radius:50%;flex:none;margin-top:6px;background:var(--bc-primary)}
-.pillar.b2 .tick{color:var(--bc-primary-deep)} .pillar.b2 .tick::before{background:var(--bc-primary-dark)}
-.pillar.b3 .tick{color:var(--bc-primary-dark)} .pillar.b3 .tick::before{background:var(--bc-primary-dark)}
-.s3-message{margin-top:26px;position:relative;z-index:2;text-align:center}
-.s3-message .inner{display:inline-flex;gap:12px;align-items:center;padding:14px 24px;border-radius:var(--r-pill);background:var(--bc-dark);color:#fff;box-shadow:0 18px 44px rgba(6,48,36,.3)}
-.s3-message .inner span{font-family:var(--display);font-size:15px;font-weight:600;color:rgba(255,255,255,.96)}
-.s3-message .inner .dot{width:8px;height:8px;border-radius:50%;background:var(--lime)}
 
 /* ==================== SLIDE 2 — EQUIPE (claro/tint) ==================== */
 .s4{background:linear-gradient(160deg,#f2faf4 0%,#eaf5ec 55%,#e6f1ea 100%)}
 .s4-title{max-width:900px;margin-top:16px}
 .s4-journey{flex:1;display:flex;align-items:center;padding-top:18px}
 .s4-stops{width:100%;display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-.s4-stop{min-height:210px;padding:20px 16px;display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:13px;border-radius:22px;background:rgba(255,255,255,.9);border:1px solid var(--bc-border);box-shadow:0 14px 30px rgba(7,64,46,.08);transition:transform .3s ease,box-shadow .3s ease}
+.s4-stop{min-height:240px;padding:20px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;border-radius:22px;background:rgba(255,255,255,.9);border:1px solid var(--bc-border);box-shadow:0 14px 30px rgba(7,64,46,.08);transition:transform .3s ease,box-shadow .3s ease}
 .s4-stop:hover{transform:translateY(-6px);box-shadow:0 24px 46px rgba(7,64,46,.14)}
-.s4-disc{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(135deg,var(--bc-primary),var(--bc-primary-dark));box-shadow:0 12px 26px rgba(15,122,86,.28);position:relative}
-.s4-disc::before{content:"";position:absolute;inset:3px;border-radius:14px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28)}
-.s4-disc svg{width:26px;height:26px;position:relative;z-index:1;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.s4-stop.d2 .s4-disc{background:linear-gradient(135deg,#4d80d9,var(--coral-deep))}
-.s4-stop.d3 .s4-disc{background:linear-gradient(135deg,#0fa06f,var(--bc-primary-deep))}
-.s4-stop.d4 .s4-disc{background:linear-gradient(135deg,#ff7a66,var(--coral-deep-orange))}
-.s4-stop.d5 .s4-disc{background:linear-gradient(135deg,#b3d84d,var(--lime-deep))}
+
+/* Espaço para foto */
+.s4-photo{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,rgba(59,189,128,.15),rgba(59,189,128,.08));border:2px dashed rgba(59,189,128,.35);display:grid;place-items:center;position:relative;overflow:hidden;transition:all .3s ease}
+.s4-photo::after{content:"";width:28px;height:28px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233bbd80' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3C/svg%3E") center/contain no-repeat;opacity:.5}
+.s4-stop:hover .s4-photo{border-color:rgba(59,189,128,.6);background:linear-gradient(135deg,rgba(59,189,128,.2),rgba(59,189,128,.12))}
+
+/* Quando adicionar foto, use: .s4-photo img { width:100%; height:100%; object-fit:cover; } */
+/* Ou substitua .s4-photo::after por uma imagem de perfil */
+
+/* Ícone minimalista */
+.s4-disc{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:rgba(59,189,128,.12);border:1px solid rgba(59,189,128,.25);position:relative;transition:all .3s ease}
+.s4-disc::before{display:none}
+.s4-disc svg{width:18px;height:18px;position:relative;z-index:1;stroke:var(--bc-primary-dark);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.s4-stop:hover .s4-disc{background:rgba(59,189,128,.18);border-color:rgba(59,189,128,.4)}
+.s4-stop.d2 .s4-disc{background:rgba(77,128,217,.12);border-color:rgba(77,128,217,.25)}
+.s4-stop.d2 .s4-disc svg{stroke:var(--coral-deep)}
+.s4-stop.d2:hover .s4-disc{background:rgba(77,128,217,.18);border-color:rgba(77,128,217,.4)}
+.s4-stop.d3 .s4-disc{background:rgba(15,160,111,.12);border-color:rgba(15,160,111,.25)}
+.s4-stop.d3 .s4-disc svg{stroke:var(--bc-primary-deep)}
+.s4-stop.d3:hover .s4-disc{background:rgba(15,160,111,.18);border-color:rgba(15,160,111,.4)}
+.s4-stop.d4 .s4-disc{background:rgba(255,122,102,.12);border-color:rgba(255,122,102,.25)}
+.s4-stop.d4 .s4-disc svg{stroke:var(--coral-deep-orange)}
+.s4-stop.d4:hover .s4-disc{background:rgba(255,122,102,.18);border-color:rgba(255,122,102,.4)}
+.s4-stop.d5 .s4-disc{background:rgba(179,216,77,.12);border-color:rgba(179,216,77,.25)}
+.s4-stop.d5 .s4-disc svg{stroke:var(--lime-deep)}
+.s4-stop.d5:hover .s4-disc{background:rgba(179,216,77,.18);border-color:rgba(179,216,77,.4)}
+
 .s4-role{font-size:12px;line-height:1.45;color:var(--bc-muted);margin-top:auto}.s4-role h3{font-family:var(--display);font-size:19px;line-height:1.1;color:var(--bc-primary-dark);margin:0 0 5px;letter-spacing:-.02em}
 .s4-text{margin-top:14px;text-align:center;max-width:760px;margin-left:auto;margin-right:auto}
 
@@ -277,7 +268,7 @@ p.body{font-size:15px;line-height:1.75;color:var(--bc-muted)}
 .scmp-vs{flex:none;display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:var(--bc-dark);border:2px solid var(--lime);color:#fff;font-size:22px;font-family:var(--display);box-shadow:0 12px 30px rgba(7,64,46,.2)}
 .scmp-summary{display:flex;justify-content:center;gap:12px;margin-top:10px}.scmp-summary span{padding:.5rem .9rem;border-radius:var(--r-pill);background:rgba(255,255,255,.78);border:1px solid var(--bc-border);font-size:11px;font-weight:700;color:var(--bc-primary-dark)}
 
-/* ==================== SLIDE 8 — DEMONSTRAÇÃO (escuro/tech) ==================== */
+/* ==================== SLIDE 5 — DEMONSTRAÇÃO (escuro/tech) ==================== */
 .s5{background:linear-gradient(160deg,var(--bc-dark) 0%,var(--bc-deep) 100%);color:#fff}
 .s5::before{content:"";position:absolute;inset:0;pointer-events:none;
   background-image:linear-gradient(rgba(111,224,168,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(111,224,168,.05) 1px,transparent 1px);background-size:46px 46px;opacity:.5;
@@ -309,7 +300,7 @@ p.body{font-size:15px;line-height:1.75;color:var(--bc-muted)}
 .live-pill .pulse{width:9px;height:9px;border-radius:50%;background:var(--lime);animation:pulse 1.8s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(195,227,78,.5)}70%{box-shadow:0 0 0 9px rgba(195,227,78,0)}100%{box-shadow:0 0 0 0 rgba(195,227,78,0)}}
 
-/* ==================== SLIDE 9 — ENCERRAMENTO (escuro/elegante) ==================== */
+/* ==================== SLIDE 6 — ENCERRAMENTO (escuro/elegante) ==================== */
 .s6{background:linear-gradient(165deg,var(--bc-dark) 0%,var(--bc-deep) 100%);color:#fff}
 .s6::before{content:"";position:absolute;inset:0;pointer-events:none;
   background-image:linear-gradient(rgba(111,224,168,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(111,224,168,.05) 1px,transparent 1px);background-size:46px 46px;opacity:.4;
@@ -433,22 +424,27 @@ p.body{font-size:15px;line-height:1.75;color:var(--bc-muted)}
       <div class="s4-journey">
         <div class="s4-stops">
           <div class="s4-stop">
+            <div class="s4-photo"></div>
             <div class="s4-disc"><svg viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="16" rx="2.5"/><path d="M9 4a3 3 0 0 1 6 0"/><path d="M9 12l2 2 4-4"/></svg></div>
             <div class="s4-role"><h3>Vinícius</h3>Planejamento e organização</div>
           </div>
           <div class="s4-stop d2">
+            <div class="s4-photo"></div>
             <div class="s4-disc"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></div>
             <div class="s4-role"><h3>Stefani</h3>Organização do conteúdo</div>
           </div>
           <div class="s4-stop d3">
+            <div class="s4-photo"></div>
             <div class="s4-disc"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M7 9l3 3-3 3M13 15h4"/></svg></div>
             <div class="s4-role"><h3>João Pedro</h3>Desenvolvimento back-end</div>
           </div>
           <div class="s4-stop d4">
+            <div class="s4-photo"></div>
             <div class="s4-disc"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="5"/><path d="M12 8V6M9 4l2 2M15 4l-2 2"/><path d="M7.5 11h-3M16.5 11h3M7.5 15h-3M16.5 15h3"/></svg></div>
             <div class="s4-role"><h3>Pietro</h3>Testes e ajustes</div>
           </div>
           <div class="s4-stop d5">
+            <div class="s4-photo"></div>
             <div class="s4-disc"><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/><circle cx="13.5" cy="6.8" r="1.1"/><circle cx="17.3" cy="10.4" r="1.1"/><circle cx="8.7" cy="7.6" r="1.1"/><circle cx="6.7" cy="12.4" r="1.1"/></svg></div>
             <div class="s4-role"><h3>Ewerton</h3>Identidade visual</div>
           </div>
@@ -475,7 +471,7 @@ p.body{font-size:15px;line-height:1.75;color:var(--bc-muted)}
         <div class="obj">
           <div class="obj-top">
             <span class="obj-ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></span>
-            <b>Facilitar o acesso às informações</b>
+            <b>Organização das informações</b>
             <span class="obj-desc">Informações claras, organizadas e fáceis de encontrar em poucos cliques.</span>
           </div>
           <span class="obj-tag">Melhor acesso</span>
@@ -545,138 +541,9 @@ p.body{font-size:15px;line-height:1.75;color:var(--bc-muted)}
   </section>
 
   <!-- ============================================================
-       SLIDE 5 — PRINCIPAIS MELHORIAS
+       SLIDE 5 — DEMONSTRAÇÃO DO SITE
   ============================================================= -->
-  <section class="slide light s3" data-note="6">
-    <div class="grid-bg"></div>
-    <div class="blob blob-a"></div>
-    <div class="blob blob-b"></div>
-
-    <div class="pad">
-      <span class="eyebrow">Principais melhorias</span>
-      <h1 class="title s3-title">Uma experiência mais clara, atual e conectada</h1>
-
-      <div class="pillars">
-        <div class="pillar">
-          <div class="ic">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
-          </div>
-          <span class="k">Pilar 01</span>
-          <h3>Navegação e organização</h3>
-          <span class="tick">Mais clareza para quem visita</span>
-        </div>
-
-        <div class="pillar b2">
-          <div class="ic">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="14" height="4.5" rx="1.5"/><rect x="3" y="9.5" width="11" height="4.5" rx="1.5"/><rect x="3" y="16" width="14" height="4.5" rx="1.5"/><circle cx="19" cy="12" r="4"/><path d="M19 10.5v3M17.5 12h3"/></svg>
-          </div>
-          <span class="k">Pilar 02</span>
-          <h3>Mais conteúdo e funcionalidades</h3>
-          <span class="tick">Novas seções ampliam a experiência do usuário</span>
-        </div>
-
-        <div class="pillar b3">
-          <div class="ic">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m14.31 8 5.74 9.94"/><path d="M9.69 8h11.48"/><path d="m7.38 12 5.74-9.94"/><path d="M9.69 16 3.95 6.06"/><path d="M14.31 16H2.83"/><path d="m16.62 12-5.74 9.94"/></svg>
-          </div>
-          <span class="k">Pilar 03</span>
-          <h3>Identidade visual modernizada</h3>
-          <span class="tick">Visual mais atual e conectado à identidade do Conecta</span>
-        </div>
-      </div>
-
-      <div class="s3-message">
-        <div class="inner">
-          <span class="dot"></span>
-          <span>O novo site não representa apenas uma mudança visual — reorganiza a experiência e fortalece a comunicação do programa.</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       SLIDE 6 — TELAS DO NOVO SITE
-  ============================================================= -->
-  <section class="slide light s-novo" data-note="5">
-    <div class="grid-bg"></div>
-    <div class="blob blob-a"></div>
-    <div class="blob blob-b"></div>
-
-    <div class="pad">
-      <span class="eyebrow">Novo site</span>
-      <h1 class="title s-antiga-title">Algumas telas da nova experiência</h1>
-
-      <div class="s-antiga-grid">
-        <div class="s-antiga-cell">
-          <div class="s2-frame">
-            <div class="shot"><img src="A.Images/novo1.jpeg" alt="Tela 1 do novo site"><span class="s-antiga-label">Quem somos</span></div>
-          </div>
-        </div>
-
-        <div class="s-antiga-cell">
-          <div class="s2-frame">
-            <div class="shot"><img src="A.Images/novo2.jpeg" alt="Tela 2 do novo site"><span class="s-antiga-label">Jornada</span></div>
-          </div>
-        </div>
-
-        <div class="s-antiga-cell">
-          <div class="s2-frame">
-            <div class="shot"><img src="A.Images/novo3.jpeg" alt="Tela 3 do novo site"><span class="s-antiga-label">O que você vai aprender</span></div>
-          </div>
-        </div>
-
-        <div class="s-antiga-cell">
-          <div class="s2-frame">
-            <div class="shot"><img src="A.Images/novo4.jpeg" alt="Tela 4 do novo site"><span class="s-antiga-label">Projetos · Turmas</span></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ============================================================
-       SLIDE 7 — COMPARATIVO: SITE ATUAL × NOVO SITE
-  ============================================================= -->
-  <section class="slide light scmp" data-note="7">
-    <div class="grid-bg"></div>
-    <div class="blob blob-a"></div>
-    <div class="blob blob-b"></div>
-
-    <div class="pad">
-      <span class="eyebrow">Comparativo</span>
-      <h1 class="title scmp-title">Do site atual ao novo site</h1>
-
-      <div class="scmp-grid">
-        <div class="scmp-card">
-          <span class="scmp-label"><span class="dot old"></span> Site atual</span>
-          <div class="s2-frame scmp-frame">
-            <div class="bar"><i></i><i></i><i></i></div>
-            <div class="shot"><img src="assets/images/site.antigo.png" alt="Site atual do Barracred Conecta"></div>
-          </div>
-        </div>
-
-        <div class="scmp-vs">→</div>
-
-        <div class="scmp-card">
-          <span class="scmp-label"><span class="dot new"></span> Novo site</span>
-          <div class="s2-frame scmp-frame">
-            <div class="bar"><i></i><i></i><i></i></div>
-            <div class="shot"><img src="assets/images/Desktop.site.png" alt="Novo site do Barracred Conecta"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="scmp-summary">
-        <span>Mais clareza</span><span>Identidade fortalecida</span><span>Melhor experiência</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       SLIDE 8 — DEMONSTRAÇÃO DO SITE
-  ============================================================= -->
-  <section class="slide s5" data-note="8">
+  <section class="slide s5" data-note="5">
     <div class="glow g1"></div>
     <div class="glow g2"></div>
 
@@ -722,9 +589,9 @@ p.body{font-size:15px;line-height:1.75;color:var(--bc-muted)}
   </section>
 
   <!-- ============================================================
-       SLIDE 9 — RESULTADO E ENCERRAMENTO
+       SLIDE 6 — RESULTADO E ENCERRAMENTO
   ============================================================= -->
-  <section class="slide s6" data-note="9">
+  <section class="slide s6" data-note="6">
     <div class="glow g1"></div>
     <div class="glow g2"></div>
 
@@ -795,7 +662,7 @@ p.body{font-size:15px;line-height:1.75;color:var(--bc-muted)}
 
 <!-- ==================== UI DE NAVEGAÇÃO ==================== -->
 <div class="ui" id="ui">
-  <span class="count" id="uiCount">01 / 09</span>
+  <span class="count" id="uiCount">01 / 06</span>
   <div class="dots" id="uiDots"></div>
 </div>
 <button class="ui-toggle" id="uiToggle" title="Ocultar/mostrar a navegação" aria-label="Ocultar ou mostrar a navegação dos slides">
@@ -842,49 +709,22 @@ p.body{font-size:15px;line-height:1.75;color:var(--bc-muted)}
     <p><b>Mensagem central:</b> apresentar rapidamente a primeira versão do site, com as quatro telas — o ponto de partida da reformulação.</p>
     <p><b>Fala:</b> “Antes das melhorias, uma breve passagem pela primeira versão do site. Nessas quatro telas, vemos como era a experiência inicial — o ponto de partida de toda a reformulação.”</p>
     <p><b>Cuidado com a linguagem:</b> apresentar a primeira versão como <span class="hl">ponto de partida</span>, nunca como algo ruim ou ultrapassado.</p>
-    <p class="hl">Momento: sem troca de apresentador — seguir para as Telas do novo site (Slide 5).</p>
+    <p class="hl">Momento: sem troca de apresentador — seguir para a Demonstração ao vivo (Slide 5).</p>
   </div>
 
   <div data-notes-for="5">
-    <span class="tag">Slide 6 · Telas do novo site · ~30s · Apresentador 1</span>
-    <div class="ttl">As principais telas da nova experiência</div>
-    <div class="tm">APRESENTADOR 1 · tempo estimado: 30 segundos</div>
-    <p><b>Mensagem central:</b> apresentar rapidamente as principais telas do novo site, mostrando a nova experiência na prática.</p>
-    <p><b>Fala:</b> "E aqui, o resultado aplicado: as principais telas do novo site. Navegação, conteúdo e responsividade já na prática."</p>
-    <p class="hl">Momento: sem troca de apresentador — seguir para o Comparativo (Slide 7).</p>
-  </div>
-
-  <div data-notes-for="6">
-    <span class="tag">Slide 5 · Principais melhorias · ~1min · Apresentador 1</span>
-    <div class="ttl">Uma experiência mais clara, atual e conectada</div>
-    <div class="tm">APRESENTADOR 1 · tempo estimado: 1 minuto</div>
-    <p><b>Mensagem central:</b> o novo site não é só uma mudança visual — reorganiza a experiência em três pilares.</p>
-    <p><b>Fala:</b> “A nova proposta se apoia em três pilares. Navegação e organização: informações claras e caminhos simples. Mais conteúdo e funcionalidades: novas seções ampliam a experiência do usuário. E identidade visual modernizada: um visual contemporâneo e acolhedor, sem perder a credibilidade institucional.”</p>
-    <p>Encerrar reforçando a frase do slide: reorganizar a experiência e fortalecer a comunicação do programa.</p>
-  </div>
-
-  <div data-notes-for="7">
-    <span class="tag">Slide 7 · Comparativo · ~30s · Apresentador 1</span>
-    <div class="ttl">Do site atual ao novo site</div>
-    <div class="tm">APRESENTADOR 1 · tempo estimado: 30 segundos</div>
-    <p><b>Mensagem central:</b> comparação visual lado a lado — o ponto de partida (site atual) e a nova proposta.</p>
-    <p><b>Fala:</b> “Para visualizar a evolução, colocamos lado a lado o site atual e o novo site — do que tínhamos como base para a nova experiência digital.”</p>
-    <p class="hl">Momento da troca: ao final deste slide, passar a fala para o Apresentador 2, que conduz a demonstração ao vivo (Slide 8).</p>
-  </div>
-
-  <div data-notes-for="8">
-    <span class="tag">Slide 8 · Demonstração ao vivo · ~4min · Apresentador 2</span>
+    <span class="tag">Slide 5 · Demonstração ao vivo · ~4min · Apresentador 2</span>
     <div class="ttl">Da proposta à experiência</div>
     <div class="tm">APRESENTADOR 2 · tempo estimado: 4 minutos (incluindo a demonstração ao vivo)</div>
     <p><b>Mensagem central:</b> apresentar o site em uso e mostrar que as decisões dos slides anteriores foram aplicadas na prática.</p>
     <p><b>Fala:</b> “Esta é a proposta aplicada. Vou mostrar o site ao vivo, navegando na página inicial, pelo menu, por uma seção principal e pela versão para celular — navegação, conteúdo e responsividade.”</p>
     <p><b>Demonstração (rota sugerida, ~3min30):</b> 1) página inicial e apresentação do programa; 2) menu e organização das informações; 3) uma seção principal; 4) adaptação para celular, se disponível.</p>
     <p><b>ATENÇÃO:</b> ficar atento ao tempo — o slide permanece em tela até o encerramento.</p>
-    <p class="hl">Momento: iniciar a demonstração ao vivo aqui. Apresentador 2 segue para o Slide 9 (Resultado e encerramento).</p>
+    <p class="hl">Momento: iniciar a demonstração ao vivo aqui. Apresentador 2 segue para o Slide 6 (Resultado e encerramento).</p>
   </div>
 
-  <div data-notes-for="9">
-    <span class="tag">Slide 9 · Resultado e encerramento · ~1min30 · Apresentador 2</span>
+  <div data-notes-for="6">
+    <span class="tag">Slide 6 · Resultado e encerramento · ~1min30 · Apresentador 2</span>
     <div class="ttl">Mais do que um novo visual, uma nova forma de conectar</div>
     <div class="tm">APRESENTADOR 2 · tempo estimado: 1 minuto e 30 segundos</div>
     <p><b>Mensagem central:</b> o projeto transforma a presença digital do programa em uma experiência mais clara, acolhedora e conectada ao seu propósito.</p>
